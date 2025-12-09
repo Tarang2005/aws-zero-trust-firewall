@@ -1,30 +1,77 @@
-# AWS Zero-Trust Cloud Firewall
+# AWS Zero Trust Firewall – Automated Security Watcher
 
-> A serverless DevSecOps tool that enforces Zero-Trust architecture by automatically detecting and revoking unauthorized SSH access (Port 22) in real-time.
+A Python-based automated AWS security enforcement tool that continuously monitors EC2 security groups and **removes unauthorized public access rules in real time** — demonstrating Zero Trust and DevSecOps automation.
 
-![AWS](https://img.shields.io/badge/AWS-Lambda-orange?style=for-the-badge&logo=amazon-aws)
-![Python](https://img.shields.io/badge/Python-3.9-blue?style=for-the-badge&logo=python)
-![Security](https://img.shields.io/badge/Security-Zero%20Trust-red?style=for-the-badge)
+---
 
-## Architecture
-This system operates on a **Detection & Response** loop:
-1. **Trigger:** Amazon EventBridge schedules an audit every 1 hour.
-2. **Audit:** AWS Lambda (Python/Boto3) scans all EC2 Security Groups.
-3. **Logic:** Identifies rules allowing `0.0.0.0/0` on Port 22 (SSH).
-4. **Remediation:** Instantly revokes the rule using the AWS API.
+## Features
+- **Auto-Scan:** Automatically scans all EC2 Security Groups.
+- **Detection:** Detects public exposure (`0.0.0.0/0`) on sensitive ports.
+- **Remediation:** Removes unauthorized ingress rules instantly.
+- **Logging:** Logs findings & remediation results.
+- **Flexible:** Works locally or via AWS Lambda.
+- **Continuous:** Supports real-time continuous monitoring.
 
-## Key Features
-* **Automated Auditing:** Eliminates manual review of security groups.
-* **Self-Healing Infrastructure:** Automatically reverts insecure changes.
-* **Serverless:** Zero maintenance; runs on AWS Lambda.
-* **Logging:** Full audit trail via Amazon CloudWatch.
+---
 
-## Technology Stack
-* **Cloud:** AWS (Lambda, EC2, EventBridge, IAM)
-* **Language:** Python 3.12
-* **SDK:** Boto3
+## Tech Stack
+
+| Component | Technology |
+|-----------|-----------|
+| **Language** | Python |
+| **Cloud** | AWS |
+| **Security** | EC2 Security Groups |
+| **Automation** | Lambda + EventBridge |
+| **Libraries** | `boto3` |
+
+---
 
 ## How to Run Locally
-1. Clone the repo
+
+### 1. Clone the repository
 ```bash
 git clone [https://github.com/YOUR_USERNAME/aws-zero-trust-firewall.git](https://github.com/YOUR_USERNAME/aws-zero-trust-firewall.git)
+cd aws-zero-trust-firewall
+```
+### 2. Install dependencies
+```
+pip install boto3
+```
+### 3️. Run the watcher script
+```
+python src/watcher.py
+```
+
+### Proof of Concept (Real Terminal Output)
+
+<img width="1505" height="707" alt="terminal" src="https://github.com/user-attachments/assets/967590f9-6837-4fa0-b136-d17e0c024933" />
+
+
+### Deploy to AWS (Lambda)
+#### Step	Action
+
+1	Upload Python code to Lambda
+
+2	Set Timeout → 15s
+
+3	Add IAM role → AmazonEC2FullAccess
+
+4	Add EventBridge Trigger → rate(5 minutes)
+
+5	Verify logs via CloudWatch
+
+### Impact
+Enforces Zero Trust
+
+Reduces MTTR from days → seconds
+
+Demonstrates AWS Security + DevSecOps Automation
+
+Internship-ready real-world project
+
+### Contact
+Author: Tarang Patra
+
+LinkedIn: https://www.linkedin.com/in/tarang-patra-31072b2b2/
+
+GitHub: https://github.com/Tarang2005
