@@ -28,7 +28,8 @@ A Python-based automated AWS security enforcement tool that continuously monitor
 
 ## Architecture
 
-![Architecture Diagram](diagrams/architecture.png)
+<img width="2678" height="514" alt="Architecture" src="https://github.com/user-attachments/assets/dd31fb15-5a53-46a6-a9b5-e880909bf037" />
+
 
 ## How to Run Locally
 
