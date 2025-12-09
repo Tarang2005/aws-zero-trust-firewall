@@ -53,16 +53,12 @@ bash
 Copy code
 python src/watcher.py
 
-Proof of Concept
+## Proof of Concept
 Terminal output demonstrating real detection & auto-remediation:
 
+<img width="1505" height="707" alt="terminal" src="https://github.com/user-attachments/assets/a1abdce7-60c8-44bd-b6e5-d6828bb711db" />
 
-mathematica
-Copy code
-ALERT: Found Open Port 22 in sg-077000ff...
-ACTION TAKEN: Removed public SSH access for sg-077000ff...
-Scan Complete — Fixed 1 security risks.
-Deployment (AWS)
+## Deployment (AWS)
 Deploy Python code to AWS Lambda
 
 Set Lambda Timeout → 15 seconds
@@ -73,14 +69,14 @@ Create EventBridge rule → rate(1 hour)
 
 Validate results through CloudWatch Logs
 
-Impact
+## Impact
 Reduced MTTR from days → seconds
 
 Enforced Zero-Trust cloud governance
 
 Demonstrated DevSecOps + Automation + AWS Security
 
-Contact
-Author: YOUR NAME
+## Contact
+Author: Tarang Patra
 LinkedIn: https://www.linkedin.com/in/tarang-patra-31072b2b2/
 GitHub: https://github.com/Tarang2005
