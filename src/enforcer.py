@@ -6,15 +6,12 @@ def auto_remediate():
     print("ENFORCER PROTOCOL INITIATED...")
     
     try:
-        # Get all groups
         response = ec2.describe_security_groups()
         security_groups = response['SecurityGroups']
         
-        # Loop through groups
         for sg in security_groups:
             for permission in sg['IpPermissions']:
                 
-                # Check for Port 22 + 0.0.0.0/0 (The Danger Combo)
                 if 'FromPort' in permission and permission['FromPort'] == 22:
                     for ip_range in permission['IpRanges']:
                         cidr = ip_range.get('CidrIp')
@@ -22,7 +19,6 @@ def auto_remediate():
                         if cidr == '0.0.0.0/0':
                             print(f"TARGET IDENTIFIED: {sg['GroupId']} has Port 22 Open.")
                             
-                            # --- THE KILL SWITCH ---
                             print(f"REVOKING ACCESS for {sg['GroupId']}...")
                             
                             ec2.revoke_security_group_ingress(
