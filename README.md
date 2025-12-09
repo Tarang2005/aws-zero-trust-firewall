@@ -30,7 +30,7 @@ A Python-based automated AWS security enforcement tool that continuously monitor
 
 ### 1. Clone the repository
 ```bash
-git clone [https://github.com/tarang2005/aws-zero-trust-firewall.git](https://github.com/YOUR_USERNAME/aws-zero-trust-firewall.git)
+git clone [https://github.com/Tarang2005/aws-zero-trust-firewall.git](https://github.com/YOUR_USERNAME/aws-zero-trust-firewall.git)
 cd aws-zero-trust-firewall
 ```
 ### 2. Install dependencies
