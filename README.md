@@ -1,3 +1,7 @@
+# AWS Zero-Trust Cloud Firewall
+
+> A serverless DevSecOps tool that enforces Zero-Trust architecture by automatically detecting and revoking unauthorized SSH access (Port 22) in real-time.
+
 ![AWS](https://img.shields.io/badge/AWS-Lambda-orange?style=for-the-badge&logo=amazon-aws)
 ![Python](https://img.shields.io/badge/Python-3.9-blue?style=for-the-badge&logo=python)
 ![Security](https://img.shields.io/badge/Security-Zero%20Trust-red?style=for-the-badge)
