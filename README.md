@@ -44,23 +44,34 @@ python src/watcher.py
 
 ### Proof of Concept (Real Terminal Output)
 
-<p align="center"> <img src="diagram/terminal.png" alt="Terminal Output" width="800"/> </p>
+<img width="1505" height="707" alt="terminal" src="https://github.com/user-attachments/assets/967590f9-6837-4fa0-b136-d17e0c024933" />
+
 
 ### Deploy to AWS (Lambda)
-# Step	Action
+#### Step	Action
+
 1	Upload Python code to Lambda
+
 2	Set Timeout → 15s
+
 3	Add IAM role → AmazonEC2FullAccess
+
 4	Add EventBridge Trigger → rate(5 minutes)
+
 5	Verify logs via CloudWatch
 
 ### Impact
 Enforces Zero Trust
+
 Reduces MTTR from days → seconds
+
 Demonstrates AWS Security + DevSecOps Automation
+
 Internship-ready real-world project
 
 ### Contact
 Author: Tarang Patra
+
 LinkedIn: https://www.linkedin.com/in/tarang-patra-31072b2b2/
+
 GitHub: https://github.com/Tarang2005
